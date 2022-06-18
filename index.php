@@ -1,9 +1,14 @@
-<?php 
+<?php
 $titre = "Page d'acceuil";
+$nav = "index";
 require "header.php";
 ?>
 
-<main role="main" class="container">
+<pre>
+<?php print_r($_SERVER)?>
+</pre>
+
+
 
   <div class="starter-template">
     <h1>Bootstrap starter template</h1>

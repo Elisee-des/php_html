@@ -1,3 +1,20 @@
+<?php
+
+// function nav_item (string $lien, string $titre): string
+// {
+//   $classe = "nav-item";
+//   if ($_SERVER["SCRIPT_NAME"] === $lien) {
+//     $classe = $classe. ' active';
+//   }
+//   return <<<HTML
+//   <li class="$classe.">
+//     <a class="nav-link" href="$lien">$titre</a>
+//   </li>
+// HTML
+
+// }
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -8,7 +25,13 @@
   <meta name="author" content="">
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-  <title><?php echo $titre ?></title>
+  <title>
+    <?php if (isset($titre)) : ?>
+      <?= $titre; ?>
+    <?php else : ?>
+      Mon site
+    <?php endif ?>
+  </title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
@@ -30,11 +53,17 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/index.php">Acceuil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/index.php">Acceuil</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact.php">contact</a>
-        </li>
+        <a class="nav-link" href="/contact.php">Contact</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/jeu.php">Jeu</span></a>
+      </li>
+      
       </ul>
     </div>
   </nav>
+
+  <main role="main" class="container">
