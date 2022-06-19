@@ -1,25 +1,39 @@
 <?php
-$parfun = [
-    
+require "function.php";
+$parfuns = [
+    'fraise' => 4,
+    "chocolat" => 5,
+    "Vanile" => 3
 ];
 
-$parfun = [
-
+$cornets = [
+    "pot" => 2,
+    "cornet" => 0.5
 ];
-$parfun = [
 
+$supplements = [
+    'pepite de chocolat' => 1,
+    'chantity' => 0.5
 ];
+
 require "header.php";
 ?>
+
+<h2>Composer Votre Glace</h2>
 
 <form action="/jeu2.php" method="POST">
 
     <div class="form-group">
-        <input type="checkbox" name="parfun[]" value="fraise">Fraise</input>
-        <input type="checkbox" name="parfun[]" value="vanile">Vanile</input>
-        <input type="checkbox" name="parfun[]" value="chocolat">Chocolat</input>
+        <?php foreach ($parfuns as $parfun => $prix) : ?>
+            <div class="checkbox">
+                <label for="checkbox">
+                    <?= checkbox("parfun", $parfun, $_GET) ?>
+                </label>
+                <?= $parfun ?> - <?= $prix ?> $
+            </div>
+        <?php endforeach; ?>
     </div>
-    <button type="submit" class="btn btn-primary">Deviner</button>
+    <button type="submit" class="btn btn-primary">Composer ma glace</button>
 
 </form>
 
